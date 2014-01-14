@@ -161,6 +161,13 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         }
 
         mTabLayout.addView(tabView, new LinearLayout.LayoutParams(0, MATCH_PARENT, 1));
+        tabView.post(new Runnable() {
+			@Override
+			public void run() {
+				tabView.setLayoutParams(new LinearLayout.LayoutParams(
+						mTabLayout.getWidth() / 3, MATCH_PARENT));
+			}
+		});
     }
 
     @Override
